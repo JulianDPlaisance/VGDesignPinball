@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 461a070215965684684985bfcaca675e
+timeCreated: 1486408855
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - scoreText: {fileID: 114211450746219416, guid: 92becf84f3161f349a98d2696b31b38b,
+      type: 2}
+  - creditScoreText: {instanceID: 0}
+  - livesText: {instanceID: 0}
+  - pinballObject: {instanceID: 0}
+  - pinballs: {instanceID: 0}
+  - mainMenu: {instanceID: 0}
+  - gameplayMenu: {instanceID: 0}
+  - creditsMenu: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

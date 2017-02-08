@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: c0e46300714bc994caf189063194e5d1
+timeCreated: 1485809704
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - pinball: {fileID: 1674087515673704, guid: 7eed439a9a7cbac459e0ef4399cdf5e9, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
