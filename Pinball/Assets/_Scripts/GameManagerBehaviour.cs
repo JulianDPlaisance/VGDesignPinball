@@ -20,7 +20,7 @@ public class GameManagerBehaviour : MonoBehaviour
     // Use this for initialization
 	void Start ()
     {
-        state = STATES.MAINMENU;
+        state = STATES.MAINMENU; //Get into the opening MainMenu state and set the score, the score needed for an extra life, and the # of lives
 
         mainMenu.SetActive(true);
         gameplayMenu.SetActive(false);
@@ -33,7 +33,7 @@ public class GameManagerBehaviour : MonoBehaviour
         pinballs = pinballObject.gameObject;
         pinballs.GetComponent<PinballBehvaiour>().SetManager(this.gameObject);
 
-        DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(gameObject); //Keeping this persisting throughout the game
     }
 
     // Update is called once per frame
@@ -44,10 +44,10 @@ public class GameManagerBehaviour : MonoBehaviour
             case STATES.MAINMENU:
                 break;
 
-            case STATES.GAMEPLAY:
+            case STATES.GAMEPLAY: //Control some of the automated aspects of the gameplay
                 scoreText.text = "Score: " + score;
                 livesText.text = "Lives: " + lives;
-                if (noPinball == true && lives > 0)
+                if (noPinball == true && lives > 0) //If the player can still play but lost their ball then give them a new ball
                 {
                     Instantiate(pinballs, new Vector3(-7, 10, 0), new Quaternion(0, 0, 0, 0));
                     noPinball = false;
@@ -84,7 +84,7 @@ public class GameManagerBehaviour : MonoBehaviour
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
 
-        DestroyImmediate(gameObject);
+        DestroyImmediate(gameObject); //I didn't think about adding a check to see if GameManagerBehaviour was around so I just destroyed the old one to avoid duplicates
     }
 
     public void Quit()

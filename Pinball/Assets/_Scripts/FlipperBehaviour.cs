@@ -16,7 +16,7 @@ public class FlipperBehaviour : MonoBehaviour
         source = gameObject.GetComponent<AudioSource>();
         hinge = gameObject.GetComponent<HingeJoint2D>();
         motor = hinge.motor;
-        if(isLeftFlipper)
+        if(isLeftFlipper) // Setting up stereo for each flipper
         {
             source.panStereo = -0.8f;
         }
@@ -30,11 +30,15 @@ public class FlipperBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isLeftFlipper)
+        /* Adding the ability to flip the flippers.
+         * My solution to controlling 2 separate game objects at the time was,
+         * to give both of them this script and set both of their isLeftFlipper appropriately
+         */
+        if (isLeftFlipper) 
         {
             if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
             {
-                motor.motorSpeed = -500;
+                motor.motorSpeed = -500; //Bring left flipper up and play a sound
                 hinge.motor = motor;
                 if(isPlaying == false)
                 {
@@ -45,7 +49,7 @@ public class FlipperBehaviour : MonoBehaviour
             }
             else
             {
-                motor.motorSpeed = 500;
+                motor.motorSpeed = 500; //Bring left flipper back down and set the sound flag to false
                 hinge.motor = motor;
                 isPlaying = false;
             }
@@ -54,7 +58,7 @@ public class FlipperBehaviour : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
             {
-                motor.motorSpeed = 500;
+                motor.motorSpeed = 500; //Bring right flipper up and play a sound
                 hinge.motor = motor;
                 if (isPlaying == false)
                 {
@@ -64,7 +68,7 @@ public class FlipperBehaviour : MonoBehaviour
             }
             else
             {
-                motor.motorSpeed = -500;
+                motor.motorSpeed = -500; //Bring right flipper back down and set the sound flag to false
                 hinge.motor = motor;
                 isPlaying = false;
             }
